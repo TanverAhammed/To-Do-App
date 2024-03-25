@@ -11,14 +11,6 @@ const DefaultModal = ({show, handleClose, handleSubmit, children}) => {
                 <Modal.Body>
                     {children}
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={handleSubmit}>
-                        Save Changes
-                    </Button>
-                </Modal.Footer>
             </Modal>
         </>
     );
