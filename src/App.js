@@ -31,6 +31,7 @@ const App = () => {
     }
 
     const handleDelete = (id) => {
+        alert("Are you want to Delete?")
         const fTodos = filterableTodos.filter(item => item.id !== id)
 
         setTodos(fTodos);
