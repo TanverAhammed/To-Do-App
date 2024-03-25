@@ -5,6 +5,7 @@ import DefaultModal from "./components/DefaultModal";
 import useTodoStore from "./stores/todoStore";
 import Todo from "./models/Todo";
 import TodoForm from "./components/todo/TodoForm";
+import moment from "moment";
 
 const App = () => {
 
@@ -55,11 +56,11 @@ const App = () => {
                 <div className="mb-4">
                     <Row>
                         <Col md={6}>
-                            <Button variant="outline-primary" className="float-start"
-                                    onClick={() => setShowModal(true)}
-                            >
-                                Add New
-                            </Button>
+                            {/*<Button variant="outline-primary" className="float-start"*/}
+                            {/*        onClick={() => setShowModal(true)}*/}
+                            {/*>*/}
+                            {/*    Add New*/}
+                            {/*</Button>*/}
                         </Col>
                         <Col md={6}>
                             <Form.Control
@@ -82,6 +83,7 @@ const App = () => {
                                             <h5 className="card-title">{todo.title}</h5>
                                             <p className="card-text">{todo.details}</p>
                                             <p className="card-text"><b>{todo.status}</b></p>
+                                            <p className="card-text">{moment(todo.created_at).format('DD/MM/YYYY hh:mm:ss')}</p>
                                             <Button variant="btn btn-success me-2"
                                                     onClick={() => {
                                                         setShowEditModal(true)
@@ -96,6 +98,17 @@ const App = () => {
                                 </div>)
                         })
                     }
+
+                    <div className="col-sm-4 mb-2">
+                        <div className="card">
+                            <div className="card-body">
+
+                                <img onClick={() => setShowModal(true)} src="/ADD.jpg" style={{width: '150px', cursor: 'grabbing'}}
+                                     alt="add"/>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </Container>
